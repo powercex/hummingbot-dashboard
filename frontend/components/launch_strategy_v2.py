@@ -30,7 +30,7 @@ class LaunchStrategyV2(Dashboard.Item):
         self._controller_configs_available = self._backend_api_client.get_all_controllers_config()
         self._controller_config_selected = None
         self._bot_name = None
-        self._image_name = "hummingbot/hummingbot:latest"
+        self._image_name = "powercex/hummingbot:latest"
         self._credentials = "master_account"
 
     def _set_bot_name(self, event):
@@ -106,10 +106,10 @@ class LaunchStrategyV2(Dashboard.Item):
                     mui.TextField(label="Instance Name", variant="outlined", onChange=lazy(self._set_bot_name),
                                   sx={"width": "100%"})
                 with mui.Grid(item=True, xs=4):
-                    available_images = self._backend_api_client.get_available_images("hummingbot")
+                    available_images = self._backend_api_client.get_available_images("powercex")
                     with mui.FormControl(variant="standard", sx={"width": "100%"}):
                         mui.FormHelperText("Available Images")
-                        with mui.Select(label="Hummingbot Image", defaultValue="hummingbot/hummingbot:latest",
+                        with mui.Select(label="Hummingbot Image", defaultValue="powercex/hummingbot:latest",
                                         variant="standard", onChange=lazy(self._set_image_name)):
                             for image in available_images:
                                 mui.MenuItem(image, value=image)
