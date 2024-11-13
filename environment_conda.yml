@@ -7,7 +7,7 @@ dependencies:
   - sqlalchemy=1.4
   - pip
   - pip:
-      - git+https://github.com/powercex/hummingbot.git@34340bd7859b1d1e87a92813e94a2d9dfe66a607
+      - git+https://github.com/powercex/hummingbot.git@powercex
       - numpy==1.26.4
       - streamlit==1.33.0
       - watchdog
